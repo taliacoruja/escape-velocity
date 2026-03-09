@@ -1,0 +1,16 @@
+<svg width="0" height="0" class="hidden">
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" id="ev-logo">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM20 40C20 40 20 20 40 20C20 20 20 0 20 0C20 0 20 20 0 20C19.648 20.1428 20 40 20 40Z" fill="white"></path>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" id="icon-close">
+    <g id="Group">
+      <rect id="Shape" x="2.12109" width="24" height="3" transform="rotate(45 2.12109 0)" fill="#D0D6F9"></rect>
+      <rect id="Shape_2" y="16.9705" width="24" height="3" transform="rotate(-45 0 16.9705)" fill="#D0D6F9"></rect>
+    </g>
+  </symbol>
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" id="icon-hamburger">
+    <rect width="24" height="3" fill="#D0D6F9"></rect>
+    <rect y="9" width="24" height="3" fill="#D0D6F9"></rect>
+    <rect y="18" width="24" height="3" fill="#D0D6F9"></rect>
+  </symbol>
+</svg>
