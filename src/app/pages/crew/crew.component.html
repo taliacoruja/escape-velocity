@@ -1,1 +1,18 @@
-<p>crew works!</p>
+<section class="crew">
+  <div class="crew__inner container">
+    <h1 class="crew__title">
+      <span class="crew__number" aria-hidden="true">02</span>
+      Meet your crew
+    </h1>
+
+    <div class="crew__content">
+      <app-crew-card
+        [member]="activeMember"
+        [crew]="crew"
+        [activeIndex]="activeIndex"
+        (select)="selectCrew($event)"
+      >
+      </app-crew-card>
+    </div>
+  </div>
+</section>

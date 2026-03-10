@@ -3,7 +3,7 @@
 .destination {
   display: flex;
   min-height: var(--fluid-height-100dvh);
-  padding-top: clamp(var(--space-128), var(--fluid-space-lg), var(--space-288));
+  padding-top: clamp(var(--space-128), var(--fluid-space-lg), var(--space-200));
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
