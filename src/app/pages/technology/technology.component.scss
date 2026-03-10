@@ -1,0 +1,71 @@
+@use "../../../styles/tokens/breakpoints" as *;
+
+.technology {
+  display: flex;
+  min-height: var(--fluid-height-100dvh);
+  padding-top: clamp(var(--space-128), var(--fluid-space-lg), var(--space-200));
+  padding-bottom: var(--space-120);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.technology__inner {
+  width: 100%;
+}
+
+.technology__title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+
+  font-family: var(--font-nav);
+  font-size: clamp(var(--text-body), var(--fluid-space-xsm), var(--text-xs));
+  letter-spacing: var(--space-4);
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.technology__number {
+  font-weight: 700;
+  font-style: bold;
+  opacity: 0.25;
+}
+
+.technology__content {
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: $max-phone) {
+  .technology {
+    background-image: url("/assets/imgs/technology/background-technology-mobile.jpg");
+  }
+  .technology__title {
+    margin-bottom: var(--space-20);
+  }
+  .technology__content {
+    padding-top: var(--space-56);
+  }
+}
+@media (min-width: $bp-tablet) {
+  .technology {
+    background-image: url("/assets/imgs/technology/background-technology-tablet.jpg");
+  }
+  .technology__title {
+    margin-bottom: var(--space-36);
+  }
+  .technology__content {
+    padding-top: var(--space-56);
+  }
+}
+
+@media (min-width: $bp-desktop) {
+  .technology {
+    background-image: url("/assets/imgs/technology/background-technology-desktop.jpg");
+  }
+  .technology__title {
+    margin-bottom: var(--space-64);
+  }
+}

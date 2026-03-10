@@ -1,1 +1,17 @@
-<p>technology works!</p>
+<section class="technology">
+  <div class="technology__inner container">
+    <h1 class="technology__title">
+      <span class="technology__number" aria-hidden="true">03</span>
+      Space launch 101
+    </h1>
+
+    <div class="technology__content">
+      <app-technology-card
+        [technology]="activeTechnology"
+        [technologies]="technologies"
+        [activeIndex]="activeIndex"
+        (select)="selectTechnology($event)"
+      />
+    </div>
+  </div>
+</section>
