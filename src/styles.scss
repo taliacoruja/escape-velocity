@@ -1,4 +1,12 @@
-@use "./styles/tokens/colors";
-@use "./styles/tokens/typography";
-@use "./styles/base/reset";
-@use "./styles/base/base";
+@use "styles/base/reset";
+@use "styles/base/fonts";
+@use "styles/base/base";
+
+@use "styles/tokens/colors";
+@use "styles/tokens/spacing";
+@use "styles/tokens/typography";
+@use "styles/tokens/breakpoints";
+@use "styles/tokens/fluid";
+@use "styles/tokens/abstracts";
+
+@use "styles/layout/container";

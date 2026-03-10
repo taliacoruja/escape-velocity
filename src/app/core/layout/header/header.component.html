@@ -1,1 +1,24 @@
-<p>header works!</p>
+<header class="header">
+  <div class="header__inner">
+    <a routerLink="/" class="header__logo">
+      <svg class="header__logo-icon">
+        <use href="assets/svg/sprite.svg#ev-logo"></use>
+      </svg>
+    </a>
+
+    <button
+      class="header__menu-button"
+      type="button"
+      (click)="toggleMenu()"
+      aria-label="Open navigation menu"
+      aria-controls="main-navigation"
+      [attr.aria-expanded]="menuOpen"
+    >
+      <svg class="header__menu-icon">
+        <use href="assets/svg/sprite.svg#icon-hamburger"></use>
+      </svg>
+    </button>
+
+    <app-navigation [isOpen]="menuOpen" (close)="toggleMenu()"></app-navigation>
+  </div>
+</header>

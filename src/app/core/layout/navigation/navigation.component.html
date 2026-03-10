@@ -1,1 +1,57 @@
-<p>navigation works!</p>
+<div class="nav-overlay" *ngIf="isOpen" (click)="close.emit()"></div>
+
+<nav id="main-navigation" class="nav" [class.is-open]="isOpen">
+  <button
+    class="nav__close"
+    type="button"
+    (click)="close.emit()"
+    aria-label="Close navigation"
+  >
+    <svg class="nav__icon">
+      <use href="assets/svg/sprite.svg#icon-close"></use>
+    </svg>
+  </button>
+
+  <ul class="nav__list">
+    <li class="nav__item">
+      <a
+        class="nav__link"
+        routerLink="/"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <span class="nav__number">00</span>
+        HOME
+      </a>
+    </li>
+
+    <li class="nav__item">
+      <a
+        class="nav__link"
+        routerLink="/destination"
+        routerLinkActive="is-active"
+      >
+        <span class="nav__number">01</span>
+        DESTINATION
+      </a>
+    </li>
+
+    <li class="nav__item">
+      <a class="nav__link" routerLink="/crew" routerLinkActive="is-active">
+        <span class="nav__number">02</span>
+        CREW
+      </a>
+    </li>
+
+    <li class="nav__item">
+      <a
+        class="nav__link"
+        routerLink="/technology"
+        routerLinkActive="is-active"
+      >
+        <span class="nav__number">03</span>
+        TECHNOLOGY
+      </a>
+    </li>
+  </ul>
+</nav>

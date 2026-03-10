@@ -1,0 +1,78 @@
+@use "../../../../styles/tokens/breakpoints" as *;
+
+.header {
+  position: absolute;
+  top: clamp(var(--space-36), var(--fluid-space-xsm), 0rem);
+  left: 0;
+  width: 100%;
+
+  z-index: 10;
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding-inline: clamp(
+    var(--space-24),
+    var(--fluid-space-xsm),
+    var(--space-56)
+  );
+
+  width: 100%;
+}
+
+.header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__logo-icon {
+  display: block;
+  width: var(--space-36);
+  height: var(--space-36);
+}
+
+.header__menu-button {
+  display: inline-flex;
+  grid-column: 3;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  width: var(--space-44);
+  height: var(--space-44);
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.header__menu-icon {
+  display: block;
+  width: var(--space-24);
+  height: var(--space-24);
+}
+
+app-navigation {
+  position: static;
+}
+
+@media (min-width: $bp-tablet) {
+  .header__menu-button {
+    display: none;
+  }
+}
+@media (min-width: $bp-tablet) and (max-width: $bp-desktop) {
+  .header__inner {
+    padding-right: 0;
+    padding-left: clamp(
+      var(--space-24),
+      var(--fluid-space-xsm),
+      var(--space-56)
+    );
+  }
+}

@@ -1,0 +1,163 @@
+@use "../../../styles/tokens/breakpoints" as *;
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: var(--fluid-height-100dvh);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url("/assets/imgs/home/background-home-mobile.jpg");
+}
+
+.home__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  justify-items: center;
+  text-align: center;
+
+  gap: clamp(var(--space-48), var(--fluid-space-sm), var(--space-80));
+
+  padding-bottom: clamp(
+    var(--space-64),
+    var(--fluid-space-md),
+    var(--space-128)
+  );
+  padding-top: clamp(var(--space-128), var(--fluid-space-lg), var(--space-288));
+
+  width: 100%;
+}
+
+.home__content {
+  max-width: 540px;
+}
+
+.home__subtitle {
+  font-family: var(--font-nav);
+  font-size: var(--text-xs);
+
+  text-transform: uppercase;
+  letter-spacing: 4.75px;
+
+  margin-bottom: var(--space-24);
+}
+
+.home__title {
+  margin-bottom: var(--space-32);
+
+  font-family: var(--font-heading);
+  font-size: clamp(var(--space-80), var(--fluid-text-xl), var(--space-144));
+
+  text-transform: uppercase;
+  line-height: 1;
+
+  color: var(--color-white);
+
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.home__description {
+  margin-inline: auto;
+
+  max-width: var(--space-448);
+
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+
+  line-height: 1.8;
+}
+
+.home__cta {
+  display: flex;
+  justify-content: center;
+}
+
+.home__explore-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: var(--space-144);
+  height: var(--space-144);
+
+  border-radius: var(--round-border);
+  border: none;
+
+  background: var(--color-white);
+  color: var(--color-dark);
+
+  font-family: var(--font-heading);
+  font-size: var(--text-xs);
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  z-index: 1;
+  @media (min-width: $bp-tablet) {
+    width: var(--space-272);
+    height: var(--space-272);
+  }
+}
+
+.home__explore-button::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  border-radius: var(--round-border);
+  background: var(--color-explore-hover);
+  transform: scale(1);
+  opacity: 0;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+  z-index: -1;
+}
+
+.home__explore-button:hover::before,
+.home__explore-button:focus-visible::before {
+  transform: scale(1.6);
+  opacity: 1;
+}
+@media (max-width: $max-phone) {
+  .home {
+    background-image: url("/assets/imgs/home/background-home-mobile.jpg");
+  }
+}
+@media (min-width: $bp-tablet) {
+  .home {
+    background-image: url("/assets/imgs/home/background-home-tablet.jpg");
+  }
+}
+
+@media (min-width: $bp-desktop) {
+  .home {
+    background-image: url("/assets/imgs/home/background-home-desktop.jpg");
+  }
+
+  .home__inner {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: end;
+    text-align: left;
+    justify-items: start;
+  }
+
+  .home__cta {
+    justify-content: flex-end;
+  }
+}

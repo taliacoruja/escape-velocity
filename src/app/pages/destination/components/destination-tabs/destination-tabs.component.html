@@ -1,0 +1,19 @@
+<div class="destination-tabs">
+  <ul class="destination-tabs__list" role="tablist">
+    <li
+      *ngFor="let destination of destinations; let i = index"
+      class="destination-tabs__item"
+    >
+      <button
+        class="destination-tabs__button"
+        [class.is-active]="i === activeIndex"
+        (click)="selectTab(i)"
+        role="tab"
+        [attr.aria-selected]="i === activeIndex"
+        [attr.aria-controls]="'destination-panel-' + i"
+      >
+        {{ destination.name }}
+      </button>
+    </li>
+  </ul>
+</div>
