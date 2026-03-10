@@ -1,4 +1,4 @@
-<main class="home">
+<section class="home">
   <div class="container home__inner">
     <div class="home__content">
       <p class="home__subtitle">So, you want to travel to</p>
@@ -14,7 +14,14 @@
     </div>
 
     <div class="home__cta">
-      <button class="home__explore-button" type="button">Explore</button>
+      <button
+        class="home__explore-button"
+        type="button"
+        aria-label="Explore space destinations"
+        (click)="goToDestination()"
+      >
+        Explore
+      </button>
     </div>
   </div>
-</main>
+</section>

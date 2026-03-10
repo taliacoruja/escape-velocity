@@ -1,1 +1,18 @@
-<p>destination works!</p>
+<section class="destination">
+  <div class="destination__inner container">
+    <h1 class="destination__title">
+      <span class="destination__number" aria-hidden="true">01</span>
+      Pick your destination
+    </h1>
+
+    <div class="destination__content">
+      <app-destination-card
+        [destination]="activeDestination"
+        [destinations]="destinations"
+        [activeIndex]="activeIndex"
+        (select)="selectDestination($event)"
+      >
+      </app-destination-card>
+    </div>
+  </div>
+</section>

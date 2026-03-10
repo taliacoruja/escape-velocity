@@ -89,8 +89,8 @@
   align-items: center;
   justify-content: center;
 
-  width: clamp(var(--space-144), var(--fluid-space-sm), var(--space-272));
-  height: clamp(var(--space-144), var(--fluid-space-sm), var(--space-272));
+  width: var(--space-144);
+  height: var(--space-144);
 
   border-radius: var(--round-border);
   border: none;
@@ -106,6 +106,10 @@
   cursor: pointer;
 
   z-index: 1;
+  @media (min-width: $bp-tablet) {
+    width: var(--space-272);
+    height: var(--space-272);
+  }
 }
 
 .home__explore-button::before {
@@ -130,7 +134,11 @@
   transform: scale(1.6);
   opacity: 1;
 }
-
+@media (max-width: $max-phone) {
+  .home {
+    background-image: url("/assets/imgs/home/background-home-mobile.jpg");
+  }
+}
 @media (min-width: $bp-tablet) {
   .home {
     background-image: url("/assets/imgs/home/background-home-tablet.jpg");
@@ -143,30 +151,7 @@
   }
 
   .home__inner {
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    text-align: left;
-    justify-items: start;
-  }
-
-  .home__cta {
-    justify-content: flex-end;
-  }
-}
-
-@media (min-width: $bp-tablet) {
-  .home {
-    background-image: url("/assets/imgs/home/background-home-tablet.jpg");
-  }
-}
-
-@media (min-width: $bp-desktop) {
-  .home {
-    background-image: url("/assets/imgs/home/background-home-desktop.jpg");
-  }
-
-  .home__inner {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     align-items: end;
     text-align: left;
     justify-items: start;

@@ -8,7 +8,22 @@
 }
 
 .nav {
+  position: relative;
   justify-self: end;
+
+  @media (min-width: $bp-desktop-av) {
+    &::before {
+      position: absolute;
+      content: "";
+      opacity: 0.25;
+      background: var(--color-white);
+      height: 1px;
+      width: 50%;
+      left: 0;
+      top: 50%;
+      transform: translate(-95%, -50%);
+    }
+  }
 }
 
 .nav__list {
@@ -40,7 +55,8 @@
 }
 
 .nav__number {
-  font-weight: D;
+  font-weight: 700;
+  font-style: bold;
 }
 
 .nav__close {
@@ -58,7 +74,7 @@
     padding: var(--space-120) var(--space-32) var(--space-32);
 
     inset: 0 0 0 auto;
-    width: min(var(--fluid-space-extralg), var(--space-32));
+    width: min(var(--fluid-space-extralg), var(--fluid-space-extralg));
     height: var(--fluid-height-100dvh);
 
     transform: translateX(100%);

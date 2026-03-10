@@ -1,0 +1,98 @@
+@use "../../../../../styles/tokens/breakpoints" as *;
+
+.destination-card__content {
+  padding-bottom: var(--space-144);
+}
+.destination-card__picture {
+  display: block;
+  margin-bottom: var(--space-40);
+}
+
+.destination-card__image {
+  width: var(--space-448);
+  height: var(--space-448);
+  object-fit: contain;
+}
+
+.destination-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--text-md), var(--fluid-space-md), var(--text-lg));
+  line-height: 1;
+  text-transform: uppercase;
+  margin-bottom: var(--space-16);
+  color: var(--color-white);
+  font-feature-settings:
+    "liga" off,
+    "clig" off;
+
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.destination-card__description {
+  margin-bottom: var(--space-40);
+
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-nav), var(--fluid-space-sm), var(--text-body));
+  color: var(--color-light);
+  line-height: 180%;
+}
+
+.destination-card__meta {
+  display: flex;
+  gap: var(--space-80);
+  padding-top: var(--space-24);
+
+  border-top: 1px solid var(--color-border);
+}
+
+.destination-card__meta-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.destination-card__label {
+  font-family: var(--font-nav);
+
+  font-size: clamp(var(--text-nav), var(--fluid-space-sm), var(--text-body));
+  color: var(--color-light);
+  letter-spacing: var(--space-2);
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.destination-card__value {
+  margin-top: var(--space-12);
+
+  font-family: var(--font-body);
+  font-size: clamp(var(--text-body), var(--fluid-space-sm), var(--text-xs));
+  text-transform: uppercase;
+}
+
+@media (max-width: $max-tablet) {
+  .destination-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .destination-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .destination-card__title {
+    margin-bottom: var(--space-36);
+  }
+}
+@media (min-width: $bp-desktop) {
+  .destination-card__title {
+    margin-bottom: var(--space-64);
+  }
+  .destination-card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    gap: var(--space-120);
+  }
+}
