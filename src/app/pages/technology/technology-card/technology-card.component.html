@@ -1,0 +1,31 @@
+<article class="technology-card">
+  <app-technology-tabs
+    [technologies]="technologies"
+    [activeIndex]="activeIndex"
+    (select)="select.emit($event)"
+  />
+
+  <div class="technology-card__content">
+    <p class="technology-card__subtitle">The terminology...</p>
+
+    <h2 class="technology-card__title">
+      {{ technology.name }}
+    </h2>
+
+    <p class="technology-card__description">
+      {{ technology.description }}
+    </p>
+  </div>
+
+  <picture class="technology-card__picture">
+    <source media="(min-width: 1180px)" [srcset]="technology.images.portrait" />
+
+    <img
+      class="technology-card__image"
+      [src]="technology.images.landscape"
+      [alt]="technology.name"
+      loading="eager"
+      decoding="async"
+    />
+  </picture>
+</article>

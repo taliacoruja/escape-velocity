@@ -1,0 +1,10 @@
+<div class="technology-tabs" role="tablist">
+  <button
+    *ngFor="let tech of technologies; let i = index"
+    class="technology-tabs__button"
+    [class.is-active]="i === activeIndex"
+    (click)="selectTab(i)"
+  >
+    {{ i + 1 }}
+  </button>
+</div>

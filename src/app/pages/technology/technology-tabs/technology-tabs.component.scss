@@ -1,0 +1,45 @@
+@use "../../../../styles/tokens/breakpoints" as *;
+
+.technology-tabs {
+  display: flex;
+  gap: var(--space-32);
+}
+
+.technology-tabs__button {
+  border-radius: var(--round-border);
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: var(--color-white);
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.technology-tabs__button:hover {
+  border-color: var(--color-white);
+}
+
+.technology-tabs__button.is-active {
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+@media (max-width: $bp-desktop) {
+  .technology-tabs__button {
+    width: var(--space-56);
+    height: var(--space-56);
+  }
+}
+
+@media (min-width: $bp-desktop) {
+  .technology-tabs {
+    flex-direction: column;
+  }
+
+  .technology-tabs__button {
+    width: var(--space-80);
+    height: var(--space-80);
+  }
+}
