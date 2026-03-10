@@ -1,0 +1,9 @@
+<div class="crew-dots" role="tablist">
+  <button
+    *ngFor="let member of crew; let i = index"
+    class="crew-dots__dot"
+    [class.is-active]="i === activeIndex"
+    (click)="selectDot(i)"
+    aria-label="Crew member navigation"
+  ></button>
+</div>

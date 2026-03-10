@@ -1,0 +1,35 @@
+<div class="crew-card">
+  <div class="crew-card__content">
+    <div class="crew-card__text">
+      <p class="crew-card__role">
+        {{ member.role }}
+      </p>
+
+      <h2 class="crew-card__name">
+        {{ member.name }}
+      </h2>
+
+      <p class="crew-card__bio">
+        {{ member.bio }}
+      </p>
+    </div>
+    <app-crew-dots
+      [crew]="crew"
+      [activeIndex]="activeIndex"
+      (select)="select.emit($event)"
+    >
+    </app-crew-dots>
+  </div>
+
+  <picture class="crew-card__picture">
+    <source [srcset]="member.images.webp" type="image/webp" />
+
+    <img
+      class="crew-card__image"
+      [src]="member.images.png"
+      [alt]="member.name"
+      loading="eager"
+      decoding="async"
+    />
+  </picture>
+</div>
