@@ -1,6 +1,10 @@
 <div class="crew-card">
   <div class="crew-card__content">
-    <div class="crew-card__text">
+    <div
+      class="crew-card__text"
+      [@crewTextChange]="member.name"
+      aria-live="polite"
+    >
       <p class="crew-card__role">
         {{ member.role }}
       </p>
@@ -21,7 +25,11 @@
     </app-crew-dots>
   </div>
 
-  <picture class="crew-card__picture">
+  <picture
+    class="crew-card__picture"
+    [@crewImageChange]="member.name"
+    aria-live="polite"
+  >
     <source [srcset]="member.images.webp" type="image/webp" />
 
     <img

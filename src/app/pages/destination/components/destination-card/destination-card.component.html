@@ -1,5 +1,9 @@
-<div class="destination-card">
-  <picture class="destination-card__picture">
+<div class="destination-card animate">
+  <picture
+    class="destination-card__picture"
+    [@imageChange]="destination.name"
+    aria-live="polite"
+  >
     <source [srcset]="destination.images.webp" type="image/webp" />
 
     <img
@@ -10,31 +14,37 @@
       decoding="async"
     />
   </picture>
-  <div class="destination-card__content" aria-live="polite">
+  <div class="destination-card__content">
     <app-destination-tabs
       [destinations]="destinations"
       [activeIndex]="activeIndex"
       (select)="select.emit($event)"
     >
     </app-destination-tabs>
-    <h2 class="destination-card__title">
-      {{ destination.name }}
-    </h2>
+    <div
+      class="destination-card__text"
+      [@textChange]="destination.name"
+      aria-live="polite"
+    >
+      <h2 class="destination-card__title">
+        {{ destination.name }}
+      </h2>
 
-    <p class="destination-card__description">
-      {{ destination.description }}
-    </p>
+      <p class="destination-card__description">
+        {{ destination.description }}
+      </p>
 
-    <dl class="destination-card__meta">
-      <div class="destination-card__meta-item">
-        <dt class="destination-card__label">Avg. distance</dt>
-        <dd class="destination-card__value">{{ destination.distance }}</dd>
-      </div>
+      <dl class="destination-card__meta">
+        <div class="destination-card__meta-item">
+          <dt class="destination-card__label">Avg. distance</dt>
+          <dd class="destination-card__value">{{ destination.distance }}</dd>
+        </div>
 
-      <div class="destination-card__meta-item">
-        <dt class="destination-card__label">Est. travel time</dt>
-        <dd class="destination-card__value">{{ destination.travel }}</dd>
-      </div>
-    </dl>
+        <div class="destination-card__meta-item">
+          <dt class="destination-card__label">Est. travel time</dt>
+          <dd class="destination-card__value">{{ destination.travel }}</dd>
+        </div>
+      </dl>
+    </div>
   </div>
 </div>
