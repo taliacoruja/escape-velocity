@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import data from '../../../assets/data.json';
+import { DataService } from '../../core/services/data.service';
 import { DestinationCardComponent } from './components/destination-card/destination-card.component';
+import { Destination } from '../../core/models/data.models';
 
 @Component({
   selector: 'app-destination',
@@ -10,11 +11,15 @@ import { DestinationCardComponent } from './components/destination-card/destinat
   styleUrls: ['./destination.component.scss'],
 })
 export class DestinationComponent implements OnInit {
-  destinations = data.destinations;
+  destinations: Destination[];
+
+  constructor(private dataService: DataService) {
+    this.destinations = this.dataService.destinations;
+  }
 
   activeIndex = 0;
 
-  get activeDestination() {
+  get activeDestination(): Destination {
     return this.destinations[this.activeIndex];
   }
 

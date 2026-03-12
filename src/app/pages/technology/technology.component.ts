@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import data from '../../../assets/data.json';
 import { TechnologyCardComponent } from './technology-card/technology-card.component';
+import { DataService } from '../../core/services/data.service';
+import { Technology } from '../../core/models/data.models';
 
 @Component({
   selector: 'app-technology',
@@ -10,11 +11,15 @@ import { TechnologyCardComponent } from './technology-card/technology-card.compo
   styleUrls: ['./technology.component.scss'],
 })
 export class TechnologyComponent {
-  technologies = data.technology;
+  technologies: Technology[];
+
+  constructor(private dataService: DataService) {
+    this.technologies = this.dataService.technology;
+  }
 
   activeIndex = 0;
 
-  get activeTechnology() {
+  get activeTechnology(): Technology {
     return this.technologies[this.activeIndex];
   }
 

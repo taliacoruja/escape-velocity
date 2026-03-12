@@ -1,17 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CrewDotsComponent } from '../crew-dots/crew-dots.component';
 import { trigger, transition, style, animate } from '@angular/animations';
-
-export interface CrewMember {
-  name: string;
-  role: string;
-  bio: string;
-  images: {
-    png: string;
-    webp: string;
-  };
-}
-
+import { CrewMember } from '../../../core/models/data.models';
 @Component({
   selector: 'app-crew-card',
   standalone: true,

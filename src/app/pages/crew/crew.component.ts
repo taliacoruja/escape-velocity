@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import data from '../../../assets/data.json';
+import { DataService } from '../../core/services/data.service';
 import { CrewCardComponent } from './crew-card/crew-card.component';
+import { CrewMember } from '../../core/models/data.models';
 
 @Component({
   selector: 'app-crew',
@@ -10,11 +11,15 @@ import { CrewCardComponent } from './crew-card/crew-card.component';
   styleUrls: ['./crew.component.scss'],
 })
 export class CrewComponent {
-  crew = data.crew;
+  crew: CrewMember[];
+
+  constructor(private dataService: DataService) {
+    this.crew = this.dataService.crew;
+  }
 
   activeIndex = 0;
 
-  get activeMember() {
+  get activeMember(): CrewMember {
     return this.crew[this.activeIndex];
   }
 

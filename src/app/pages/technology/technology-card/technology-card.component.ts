@@ -1,16 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TechnologyTabsComponent } from '../technology-tabs/technology-tabs.component';
 import { trigger, transition, style, animate } from '@angular/animations';
-
-export interface Technology {
-  name: string;
-  description: string;
-  images: {
-    portrait: string;
-    landscape: string;
-  };
-}
-
+import { Technology } from '../../../core/models/data.models';
 @Component({
   selector: 'app-technology-card',
   standalone: true,

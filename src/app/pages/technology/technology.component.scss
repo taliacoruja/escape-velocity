@@ -40,7 +40,7 @@
 }
 @media (max-width: $max-phone) {
   .technology {
-    background-image: url("/assets/imgs/technology/background-technology-mobile.jpg");
+    background-image: url("../../../assets/imgs/technology/background-technology-mobile.jpg");
   }
   .technology__title {
     margin-bottom: var(--space-20);
@@ -51,7 +51,7 @@
 }
 @media (min-width: $bp-tablet) {
   .technology {
-    background-image: url("/assets/imgs/technology/background-technology-tablet.jpg");
+    background-image: url("../../../assets/imgs/technology/background-technology-tablet.jpg");
   }
   .technology__title {
     margin-bottom: var(--space-36);
@@ -63,7 +63,7 @@
 
 @media (min-width: $bp-desktop) {
   .technology {
-    background-image: url("/assets/imgs/technology/background-technology-desktop.jpg");
+    background-image: url("../../../assets/imgs/technology/background-technology-desktop.jpg");
   }
   .technology__title {
     margin-bottom: var(--space-64);

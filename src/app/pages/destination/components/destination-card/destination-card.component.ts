@@ -1,17 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { DestinationTabsComponent } from '../destination-tabs/destination-tabs.component';
 import { trigger, transition, style, animate } from '@angular/animations';
-
-export interface Destination {
-  name: string;
-  images: {
-    png: string;
-    webp: string;
-  };
-  description: string;
-  distance: string;
-  travel: string;
-}
+import { Destination } from '../../../../core/models/data.models';
 
 @Component({
   selector: 'app-destination-card',

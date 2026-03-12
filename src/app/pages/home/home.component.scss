@@ -137,18 +137,18 @@
 }
 @media (max-width: $max-phone) {
   .home {
-    background-image: url("/assets/imgs/home/background-home-mobile.jpg");
+    background-image: url("../../../assets/imgs/home/background-home-mobile.jpg");
   }
 }
 @media (min-width: $bp-tablet) {
   .home {
-    background-image: url("/assets/imgs/home/background-home-tablet.jpg");
+    background-image: url("../../../assets/imgs/home/background-home-tablet.jpg");
   }
 }
 
 @media (min-width: $bp-desktop) {
   .home {
-    background-image: url("/assets/imgs/home/background-home-desktop.jpg");
+    background-image: url("../../../assets/imgs/home/background-home-desktop.jpg");
   }
 
   .home__inner {
