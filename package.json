@@ -4,8 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "build:pages": "ng build --configuration production",
+    "build": "ng build  --base-href '/escape-velocity/'",
+    "build:pages": "ng build --base-href /escape-velocity/",
+    "preview:pages": "npm run build:pages && http-server dist",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
