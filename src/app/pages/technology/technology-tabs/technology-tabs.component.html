@@ -4,6 +4,8 @@
     class="technology-tabs__button"
     [class.is-active]="i === activeIndex"
     (click)="selectTab(i)"
+    aria-label="Technology navigation"
+    role="tab"
   >
     {{ i + 1 }}
   </button>

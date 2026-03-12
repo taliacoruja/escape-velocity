@@ -1,0 +1,50 @@
+@keyframes highlight {
+  0% {
+    transform: translateX(0px) scaleX(0);
+    transform-origin: left;
+  }
+  25% {
+    transform: translateX(0px) scaleX(1);
+    transform-origin: left;
+  }
+  26% {
+    transform: translateX(0px) scaleX(1);
+    transform-origin: right;
+  }
+  50% {
+    transform: translateX(0px) scaleX(0);
+    transform-origin: right;
+  }
+  51% {
+    transform: translateX(0px) scaleX(0);
+    transform-origin: left;
+  }
+  75% {
+    transform: translateX(0px) scaleX(1);
+    transform-origin: left;
+  }
+  100% {
+    transform: translateX(15px) scaleX(1);
+    transform-origin: left;
+  }
+}
+@keyframes scale-up-ver {
+  0% {
+    transform: scaleY(0.4);
+    transform-origin: 0% 100%;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: 0% 100%;
+  }
+}
+@keyframes title-expand {
+  from {
+    letter-spacing: -4px;
+    opacity: 0;
+  }
+  to {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}

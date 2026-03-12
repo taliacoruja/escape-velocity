@@ -1,4 +1,5 @@
 @use "../../../../styles/tokens/breakpoints" as *;
+@use "../../../../styles/base/animations.scss";
 
 .nav-overlay {
   position: fixed;
@@ -142,13 +143,36 @@
 
   .nav__link.is-active {
     &::after {
-      position: absolute;
       content: "";
-      width: 100%;
-      height: 3px;
-      background-color: var(--color-white);
-      top: var(--space-56);
+      position: absolute;
       left: 0;
+      top: 45%;
+      width: 100%;
+      height: 14px;
+      background: #fcfcfc73;
+      transform: translateX(15px) scaleX(0);
+      transform-origin: right;
+      transition: 0.2s 1.2s cubic-bezier(0.08, 0.51, 0.21, 0.99);
+      z-index: -1;
+    }
+  }
+  .nav__link.nav__link.is-active::after {
+    animation: highlight 1.2s cubic-bezier(0.08, 0.51, 0.21, 0.99);
+    transform: translateX(15px) scaleX(1);
+    transform-origin: left;
+  }
+  .nav__link.nav__link:hover {
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 45%;
+      width: 100%;
+      height: 14px;
+      background: #fcfcfc73;
+      transition: 0.2s 1.2s cubic-bezier(0.08, 0.51, 0.21, 0.99);
+      animation: scale-up-ver 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      z-index: -1;
     }
   }
 }

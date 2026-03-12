@@ -3,14 +3,17 @@
     <li
       *ngFor="let destination of destinations; let i = index"
       class="destination-tabs__item"
+      role="presentation"
     >
       <button
         class="destination-tabs__button"
         [class.is-active]="i === activeIndex"
         (click)="selectTab(i)"
         role="tab"
-        [attr.aria-selected]="i === activeIndex"
+        [attr.aria-selected]="activeIndex === i"
         [attr.aria-controls]="'destination-panel-' + i"
+        [attr.id]="'destination-panel-' + activeIndex"
+        [attr.aria-labelledby]="'destination-tab-' + activeIndex"
       >
         {{ destination.name }}
       </button>
