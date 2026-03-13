@@ -59,6 +59,7 @@
 
 app-navigation {
   position: static;
+  grid-column: 3;
 }
 
 @media (min-width: $bp-tablet) {
